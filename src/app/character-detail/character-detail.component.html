@@ -1,0 +1,27 @@
+<div *ngIf="character" class="detail-style">
+
+  <div class="table-data">
+    <div>
+      <h2>{{ character.name }}</h2>
+      <p><strong>Name:</strong> {{ character.name }}</p>
+      <p><strong>Birth Date:</strong> {{ character.birth_year }}</p>
+      <p><strong>gender:</strong> {{ character.gender }}</p>
+      <p><strong>height:</strong> {{ character.height }}</p>
+      <p><strong>created:</strong> {{ character.created }}</p>
+      <p><strong>Skin:</strong> {{ character.skin_color }}</p>
+      <p><strong>Eye Color:</strong> {{ character.eye_color }}</p>
+    </div>
+    <div>
+      <p><strong>Species:</strong> {{ (species$  | async)?.join(', ') || 'None'}}</p>
+      <p><strong>Movies:</strong> {{ (films$ | async)?.join(', ') || 'None' }}</p>
+      <p><strong>Spaceships:</strong> {{ (starships$ | async)?.join(', ') || 'None' }}</p>
+      <p><strong>vehicles:</strong> {{ (vehicles$ | async)?.join(', ') || 'None' }}</p>
+    </div>
+  </div>
+  <div>
+    <button mat-raised-button (click)="backToHomePage()">Back</button>
+  </div>
+
+ 
+ 
+</div>

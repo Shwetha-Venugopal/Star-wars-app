@@ -1,0 +1,62 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(81, 165, 140); 
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-project {
+  margin-right: 17px;
+  margin-bottom: 0;
+  align-self: flex-end;
+}
+
+.project-head {
+  margin-left: 20px;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: row; 
+  height: calc(100vh - 100px); 
+  padding: 20px; 
+  overflow: hidden; 
+}
+
+.layout-container {
+  display: flex;
+  width: 100%;
+}
+
+.filter-section {
+  flex: 0 0 30%;
+  max-width: 300px; 
+  margin-right: 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-section {
+  flex: 1; 
+  overflow-x: auto; 
+}
+
+table {
+  width: 100%;
+  max-width: 100%; 
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}

@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="header">
+    <div class="project-head">
+      <h1>STAR WARS</h1>
+    </div>
+    <div class="title-project">
+      <h3>The SWAPI Project</h3>
+    </div>
+  </div>
+
+  <div class="center-container">
+    <div *ngIf="!isDetailView" class="layout-container">
+      <div class="filter-section">
+        <app-character-filter (filterChanged)="applyFilter($event)"></app-character-filter>
+      </div>
+      <div class="table-section">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="no">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element">
+              <a [routerLink]="['/characters', element.url.split('/').slice(-2, -1)[0]]" >
+                  {{element.name}}
+              </a>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="species">
+            <th mat-header-cell *matHeaderCellDef> Species </th>
+            <td mat-cell *matCellDef="let element"> {{element.species}} </td>
+          </ng-container>
+          <ng-container matColumnDef="birth_year">
+            <th mat-header-cell *matHeaderCellDef> Birth Year </th>
+            <td mat-cell *matCellDef="let element"> {{element.birth_year}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Router Outlet to display character details -->
+    <router-outlet (activate)="onActivate()"></router-outlet>
+  </div>
+</div>

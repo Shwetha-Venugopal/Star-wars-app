@@ -1,0 +1,42 @@
+<div [formGroup]="charecterFilterForm">
+    <div>
+        <mat-form-field>
+           
+            <mat-label>Movies Name</mat-label>
+            <mat-select formControlName="movie">
+                <mat-option *ngFor="let dt of moviesList" [value]="extractId(dt.url)" >{{dt.title}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Species</mat-label>
+            <mat-select formControlName="Species">
+                <mat-option *ngFor="let dt of spaceLists" [value]="extractId(dt.url)">{{dt.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Vehicle</mat-label>
+            <mat-select formControlName="vehical">
+                <mat-option *ngFor="let dt of vehicalLists" [value]="extractId(dt.url)">{{dt.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Star Ships</mat-label>
+            <mat-select formControlName="starships">
+                <mat-option *ngFor="let dt of starShipLists" [value]="extractId(dt.url)">{{dt.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+   
+    <div>
+
+    </div>
+    <div>
+        <button mat-raised-button (click)="searchButton()">Submit</button>
+    </div>
+</div>
